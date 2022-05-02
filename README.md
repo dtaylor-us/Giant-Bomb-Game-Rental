@@ -18,6 +18,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng deploy` to deploy the app hosted by [Firebase](https://firebase.google.com/).
 
+
+## Github Actions
+
+Pushing to this repository will trigger a build in Github Actions
+
 ***
 # Gravie Software Engineer Challenge
 
