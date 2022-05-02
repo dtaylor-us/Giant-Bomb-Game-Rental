@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "https://www.giantbomb.com/api",
+  // TODO: STORE API KEY IN ENVIRONMENT VAR
+  apiKey: "4b15aa062f73bb8ff84d3292dc7aa6733d6453b8"
 };
 
 /*

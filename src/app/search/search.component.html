@@ -1,0 +1,22 @@
+<h1>Search</h1>
+<h5 class="mb4">All rentals are $10 per game for 2 weeks.</h5>
+<app-search-input (textChange)="onTextChange($event)"></app-search-input>
+<ng-container *ngIf="(results$ | async) as results">
+  <div class="d-flex flex-wrap justify-content-around" *ngIf="results.results.length > 0; else noResults">
+    <div *ngFor="let item of results.results">
+      <div class="card mt4" style="width: 18rem;">
+        <img class="img-thumb" src="{{item.image.small_url}}" alt="{{item.name}} game image">
+        <div class="card-body">
+          <div style="height: 4rem;">
+            <p class="card-title">{{item.name}}</p>
+          </div>
+          <a (click)="addToCart(item)" class="btn btn-primary w-100">Rent</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noResults>
+    No results
+  </ng-template>
+</ng-container>
+

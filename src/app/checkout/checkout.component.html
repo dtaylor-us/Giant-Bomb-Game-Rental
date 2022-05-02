@@ -1,0 +1,63 @@
+<div *ngIf="items.length === 0 ">
+  <h2>You have no items in your shopping cart.</h2>
+  <button routerLink="/" class="btn btn-primary">Continue Shopping</button>
+</div>
+
+
+<div class="mt4" *ngIf="items.length > 0">
+  <h1>Checkout</h1>
+  <h5>All rentals are $10 per game for 2 weeks.</h5>
+  <div>
+    <h3 class="mt4">Shopping Cart</h3>
+    <ul class="list-group mt4">
+      <li class="list-group-item" *ngFor="let item of items">
+        <div class="d-flex justify-content-between">
+          <h5 class="mt2">{{item.name}}</h5>
+          <button (click)="removeItem(item)" class="btn btn-outline-danger">Remove</button>
+        </div>
+      </li>
+    </ul>
+    <div class="d-flex justify-content-end">
+      <div class="mt4 tr">
+        <h5>Total Price: {{totalPrice | currency}}</h5>
+        <h5>Due Date: {{dueDate | date}}</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <h3>Checkout Form</h3>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <br>
+      <input size="30" id="name" type="text" formControlName="name">
+      <div class="red mt2" *ngIf="this.checkoutForm.controls['name'].invalid && this.checkoutForm.controls['name'].touched">
+        <div *ngIf="this.checkoutForm.controls['name'].errors">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <div class="mt2">
+      <label for="address">
+        Address
+      </label>
+      <br>
+      <input size="30" id="address" type="text" formControlName="address">
+      <div class="red mt2" *ngIf="this.checkoutForm.controls['address'].invalid && this.checkoutForm.controls['address'].touched">
+        <div *ngIf="this.checkoutForm.controls['address'].errors">
+          Address is required
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary mt4" [disabled]="checkoutForm['invalid']" type="submit">Purchase</button>
+
+  </form>
+
+</div>

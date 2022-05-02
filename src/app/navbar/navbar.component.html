@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="pl1 navbar-brand">
+      Giant Bomb Game Rentals
+    </a>
+    <div>
+      <a routerLink="/" class="btn btn-outline-light mr3">Search Games</a>
+      <button *ngIf="getCartItemsCount() > 0" routerLink="/checkout" class="btn btn-primary">Checkout <span class="badge badge-light">{{getCartItemsCount()}}</span></button>
+    </div>
+
+
+  </div>
+
+</nav>
