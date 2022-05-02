@@ -26,7 +26,7 @@ export class SearchService {
   }
 
    getSearchUrl(searchTerm: string) {
-    return environment.apiUrl + "/search/?api_key=" + environment.apiKey + "&format=jsonp&field_list=name,image&resources=game&limit=12&query=" + "\"" + searchTerm + "\"";
+    return environment.apiUrl + "/search/?api_key=" + environment.giantBombApiKey + "&format=jsonp&field_list=name,image&resources=game&limit=12&query=" + "\"" + searchTerm + "\"";
   }
 }
 

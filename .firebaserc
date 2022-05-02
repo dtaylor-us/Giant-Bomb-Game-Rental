@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "game-rental-35047": {
+      "hosting": {
+        "game-rental": [
+          "game-rental-35047"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "game-rental-35047"
+  }
+}

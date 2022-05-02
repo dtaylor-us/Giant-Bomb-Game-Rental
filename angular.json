@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "game-rental:build:production",
+            "firebaseProject": "game-rental-35047",
+            "firebaseHostingSite": "game-rental-35047"
+          }
         }
       }
     }

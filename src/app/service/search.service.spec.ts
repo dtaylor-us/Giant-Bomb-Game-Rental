@@ -33,7 +33,7 @@ describe('SearchService', () => {
         ]
       }
 
-      const expectedUrl = `https://www.giantbomb.com/api/search/?api_key=${environment.apiKey}&format=jsonp&field_list=name,image&resources=game&limit=12&query=\"Metroid Prime\"`;
+      const expectedUrl = `https://www.giantbomb.com/api/search/?api_key=${environment.giantBombApiKey}&format=jsonp&field_list=name,image&resources=game&limit=12&query=\"Metroid Prime\"`;
 
 
       service.getResults("Metroid Prime").subscribe(data => {
@@ -48,7 +48,7 @@ describe('SearchService', () => {
     it('should return an Observable<null> if no search term passed in', () => {
 
 
-      const expectedUrl = `https://www.giantbomb.com/api/search/?api_key=${environment.apiKey}&format=jsonp&field_list=name,image&resources=game&limit=12&query=\"Metroid Prime\"`;
+      const expectedUrl = `https://www.giantbomb.com/api/search/?api_key=${environment.giantBombApiKey}&format=jsonp&field_list=name,image&resources=game&limit=12&query=\"Metroid Prime\"`;
 
 
       service.getResults("").subscribe(data => {
